@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"io/ioutil"
-	"minfo/local/kp"
+	"minfo/internal/kp"
 	"os"
 	"os/exec"
 	"os/signal"

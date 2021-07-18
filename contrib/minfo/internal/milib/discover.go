@@ -4,8 +4,8 @@ import (
 	"crypto/md5"
 	"fmt"
 	"io/ioutil"
-	"minfo/local/klippylib"
-	"minfo/local/kp"
+	"minfo/internal/klippylib"
+	"minfo/internal/kp"
 	"path/filepath"
 	"time"
 

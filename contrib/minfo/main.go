@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"minfo/local/milib"
+	"minfo/internal/milib"
 	"os"
 	"os/signal"
 	"time"

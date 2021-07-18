@@ -1,4 +1,4 @@
-package klippyclient
+package klippylib
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	"net"
 )
 
-func New(path string) *Client {
+func NewClient(path string) *Client {
 	return &Client{
 		SockPath: path,
 	}
@@ -24,6 +24,10 @@ func (x *Client) Dial() (c *Client, err error) {
 		return nil, err
 	}
 	return x, nil
+}
+
+func (x *Client) Close() {
+	x.c.Close()
 }
 
 func (x *Client) doCmd(c Command, resp *Response) error {
@@ -44,10 +48,10 @@ func (x *Client) doCmd(c Command, resp *Response) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(buf))
 
 	// dirty hack
 	dBytes := buf[0 : n-1]
+	// fmt.Println(string(dBytes))
 	err = json.Unmarshal(dBytes, resp)
 	if err != nil {
 		fmt.Println("ERR:", err, string(dBytes))
@@ -101,9 +105,5 @@ func (x *Client) GetMCUInfo() (resp MCUResponse, err error) {
 
 	r := &Response{}
 	r.Result = &resp
-	err = x.doCmd(cmd, r)
-	if err != nil {
-		return resp, err
-	}
-	return resp, nil
+	return resp, x.doCmd(cmd, r)
 }

@@ -1,4 +1,4 @@
-package klippyclient
+package klippylib
 
 type Command struct {
 	ID     int         `json:"id"`

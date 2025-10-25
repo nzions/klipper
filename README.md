@@ -1,16 +1,9 @@
-Welcome to the Klipper project!
+# Repository Migrated
 
-[![Klipper](docs/img/klipper-logo-small.png)](https://www.klipper3d.org/)
+This repository has been migrated to a new location.
 
-https://www.klipper3d.org/
+**New Location:** archive/klipper
 
-Klipper is a 3d-Printer firmware. It combines the power of a general
-purpose computer with one or more micro-controllers. See the
-[features document](https://www.klipper3d.org/Features.html) for more
-information on why you should use Klipper.
+**Migration Date:** 2025-10-25
 
-To begin using Klipper start by
-[installing](https://www.klipper3d.org/Installation.html) it.
-
-Klipper is Free Software. See the [license](COPYING) or read the
-[documentation](https://www.klipper3d.org/Overview.html).
+This repository is now archived and no longer maintained at this location.
